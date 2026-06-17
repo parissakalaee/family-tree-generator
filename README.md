@@ -73,6 +73,38 @@ Print all the sheets, lay them out on a table, and tape them together to get the
 
 See the comments at the top of `emma.yaml` for all available node options.
 
+## Project structure
+
+```
+family_tree_generator/
+├── pyproject.toml                  # build, dependencies, and tool config (ruff, mypy, pyright, pytest)
+├── uv.lock                         # pinned dependency versions
+├── src/
+│   └── family_tree/
+│       ├── cli.py                  # argument parsing and orchestration
+│       ├── translations.py         # t_name / t_ui lookups, fa_text (bidi reshaping)
+│       ├── layout.py               # geometry constants, tree layout algorithm
+│       ├── drawing.py              # colour palette, box/connector drawing, legends
+│       ├── render.py               # PDF output: single-page and A4-tiled
+│       ├── trees.py                # YAML loading, FamilyTree class, auto-discovery
+│       ├── fonts.py                # Vazirmatn font registration
+│       ├── assets/fonts/           # bundled Vazirmatn TTF files (SIL OFL)
+│       └── data/
+│           ├── translations.json   # name and UI string translations (en / nl / fa)
+│           └── trees/
+│               ├── emma.yaml       # example: de Vries family centred on Emma
+│               └── lars.yaml       # example: family of Lars (Emma's husband)
+├── tests/
+│   ├── test_translations.py
+│   ├── test_layout.py
+│   ├── test_trees.py
+│   ├── test_render.py
+│   └── test_cli.py
+└── output/                         # generated PDFs (committed as examples)
+    ├── emma/{en,nl,fa}/
+    └── lars/{en,nl,fa}/
+```
+
 ## Requirements
 
 - Python 3.12+
