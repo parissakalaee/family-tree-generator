@@ -9,13 +9,14 @@ Examples:
 """
 
 import argparse
+from collections.abc import Sequence
 from pathlib import Path
 
 from family_tree.render import build_pdf, A4_LANDSCAPE
 from family_tree.trees import ALL
 
 
-def main(argv=None):
+def main(argv: Sequence[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
         prog='family-tree',
         description='Generate multilingual family-tree PDFs.',

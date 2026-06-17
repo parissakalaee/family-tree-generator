@@ -9,6 +9,8 @@ To add a new family: drop a ``<name>.yaml`` next to the others (see the header
 of ``emma.yaml`` for the schema) — it is picked up automatically.
 """
 
+from typing import Any
+
 import yaml
 from importlib.resources import files
 
@@ -26,7 +28,7 @@ _NAMES = tuple(
 _LEGENDS = {'basic': legend_basic, 'cousin': legend_with_cousin}
 
 
-def _normalize(node):
+def _normalize(node: dict[str, Any]) -> dict[str, Any]:
     """Ensure every node has a ``kids`` list, recursively (leaves omit it)."""
     node['kids'] = node.get('kids') or []
     for kid in node['kids']:
@@ -37,14 +39,17 @@ def _normalize(node):
 class FamilyTree:
     """A family loaded from YAML, rendered to PDF pages per language."""
 
-    def __init__(self, spec):
+    SLUG: str
+    _pages: list[dict[str, Any]]
+
+    def __init__(self, spec: dict[str, Any]) -> None:
         self.SLUG = spec['slug']
         self._pages = spec['pages']
         for page in self._pages:
             _normalize(page['tree'])
 
-    def make_pages(self, lang):
-        pages = []
+    def make_pages(self, lang: str) -> list[dict[str, Any]]:
+        pages: list[dict[str, Any]] = []
         for pg in self._pages:
             legend = _LEGENDS[pg.get('legend', 'basic')](
                 lang, with_step=pg.get('steps', False)
@@ -63,7 +68,7 @@ class FamilyTree:
         return pages
 
 
-def _load(name):
+def _load(name: str) -> FamilyTree:
     path = files('family_tree').joinpath('data', 'trees', f'{name}.yaml')
     with path.open(encoding='utf-8') as f:
         return FamilyTree(yaml.safe_load(f))

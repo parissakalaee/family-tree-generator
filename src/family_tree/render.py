@@ -1,15 +1,17 @@
 """PDF output: single-page and A4-tiled rendering."""
 
 import math
+from typing import Any
 
 from reportlab.pdfgen import canvas
+from reportlab.pdfgen.canvas import Canvas
 
 from family_tree.fonts import register_fonts
 from family_tree.layout import page_size
 from family_tree.drawing import draw_page, draw_title
 
-A4 = (595.27, 841.89)
-A4_LANDSCAPE = (841.89, 595.27)
+A4: tuple[float, float] = (595.27, 841.89)
+A4_LANDSCAPE: tuple[float, float] = (841.89, 595.27)
 
 # Per-side blank borders in points. Edge-to-edge on all sides.
 PRINT_MARGIN_L = 0
@@ -21,14 +23,17 @@ TITLE_MARGIN = 24
 TITLE_MARGIN_TOP = 24
 
 
-def render_page(cv, tree, title, subtitle, legend_items, lang, cousin_link=None):
+def render_page(cv: Canvas, tree: dict[str, Any], title: str, subtitle: str,
+               legend_items: list[tuple[str, str]], lang: str,
+               cousin_link: tuple[str, int, str] | None = None) -> None:
     """Render one tree on a single page sized to fit it (for on-screen viewing)."""
     pw, ph = page_size(tree)
     cv.setPageSize((pw, ph))
     draw_page(cv, tree, title, subtitle, legend_items, lang, cousin_link, pw, ph)
 
 
-def plan_tiles(pw, ph, paper, cols=None, min_scale=0.515):
+def plan_tiles(pw: float, ph: float, paper: tuple[float, float],
+               cols: int | None = None, min_scale: float = 0.515) -> tuple[int, int, float]:
     """Scale the tree to fill the page width exactly, then stack vertically.
     Returns (cols, rows, scale). cols forces a column count (default: auto)."""
     tile_w = paper[0] - PRINT_MARGIN_L - PRINT_MARGIN_R
@@ -39,8 +44,11 @@ def plan_tiles(pw, ph, paper, cols=None, min_scale=0.515):
     return c, r, s
 
 
-def render_page_tiled(cv, tree, title, subtitle, legend_items, lang,
-                      cousin_link=None, paper=A4, cols=None, min_scale=0.515):
+def render_page_tiled(cv: Canvas, tree: dict[str, Any], title: str, subtitle: str,
+                      legend_items: list[tuple[str, str]], lang: str,
+                      cousin_link: tuple[str, int, str] | None = None,
+                      paper: tuple[float, float] = A4,
+                      cols: int | None = None, min_scale: float = 0.515) -> None:
     """Render one tree split across a grid of portrait `paper` sheets, scaled
     onto the fewest sheets. The heading is drawn at a fixed size on the top
     sheet, unaffected by the tree scale."""
@@ -71,7 +79,8 @@ def render_page_tiled(cv, tree, title, subtitle, legend_items, lang,
             cv.showPage()
 
 
-def build_pdf(pages, outpath, lang, paper=None, cols=None):
+def build_pdf(pages: list[dict[str, Any]], outpath: str, lang: str,
+              paper: tuple[float, float] | None = None, cols: int | None = None) -> None:
     """Build a PDF. paper=None -> one natural-sized page per tree (default).
     paper=(w, h) -> each tree tiled across that paper size for printing."""
     register_fonts()

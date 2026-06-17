@@ -1,20 +1,23 @@
+from typing import Any
+
 # Geometry constants (points)
-ROW_H = 40
-COL_W = 180
-BOX_W = 150
-BOX_UNIFORM = 36
-MARGIN_X = 40
-MARGIN_TOP = 100
-MARGIN_BOT = 45
+ROW_H: int = 40
+COL_W: int = 180
+BOX_W: int = 150
+BOX_UNIFORM: int = 36
+MARGIN_X: int = 40
+MARGIN_TOP: int = 100
+MARGIN_BOT: int = 45
 
 
-def person(name, g, sp=None, sp2=None, kids=None, **kw):
+def person(name: str, g: str, sp: str | None = None, sp2: str | None = None,
+           kids: list[dict[str, Any]] | None = None, **kw: Any) -> dict[str, Any]:
     d = {'name': name, 'g': g, 'sp': sp, 'sp2': sp2, 'kids': kids or []}
     d.update(kw)
     return d
 
 
-def assign_layout(node, depth, cursor):
+def assign_layout(node: dict[str, Any], depth: int, cursor: list[float]) -> None:
     node['depth'] = depth
     if node['kids']:
         for k in node['kids']:
@@ -26,15 +29,15 @@ def assign_layout(node, depth, cursor):
     node['x'] = MARGIN_X + depth * COL_W
 
 
-def count_leaves(n):
+def count_leaves(n: dict[str, Any]) -> int:
     return 1 if not n['kids'] else sum(count_leaves(k) for k in n['kids'])
 
 
-def max_depth(n):
+def max_depth(n: dict[str, Any]) -> int:
     return n['depth'] if not n['kids'] else max(max_depth(k) for k in n['kids'])
 
 
-def find(n, name, depth=None):
+def find(n: dict[str, Any], name: str, depth: int | None = None) -> dict[str, Any] | None:
     if n['name'] == name and (depth is None or n['depth'] == depth):
         return n
     for k in n['kids']:
@@ -44,7 +47,7 @@ def find(n, name, depth=None):
     return None
 
 
-def page_size(tree):
+def page_size(tree: dict[str, Any]) -> tuple[float, float]:
     """Natural (width, height) the tree needs. Also assigns x/y/depth on nodes."""
     cursor = [MARGIN_TOP]
     assign_layout(tree, 0, cursor)

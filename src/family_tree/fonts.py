@@ -27,7 +27,7 @@ STAR = {'fa': '*', 'en': '★', 'nl': '★'}  # Vazirmatn has no star glyph, so 
 _registered = False
 
 
-def _font_path(filename):
+def _font_path(filename: str) -> str:
     """Resolve a font file from FAMILY_TREE_FONT_DIR, else the bundled assets."""
     override = os.environ.get('FAMILY_TREE_FONT_DIR')
     if override:
@@ -35,7 +35,7 @@ def _font_path(filename):
     return str(files('family_tree').joinpath('assets', 'fonts', filename))
 
 
-def register_fonts():
+def register_fonts() -> None:
     """Register the Persian TTF fonts with ReportLab (idempotent)."""
     global _registered
     if _registered:

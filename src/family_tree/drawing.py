@@ -1,4 +1,7 @@
-from reportlab.lib.colors import HexColor, white
+from typing import Any
+
+from reportlab.lib.colors import Color, HexColor, white
+from reportlab.pdfgen.canvas import Canvas
 
 from family_tree.fonts import FONT_REG, FONT_BOLD, FONT_SUB, FONT_SUB_SIZE, STAR
 from family_tree.translations import t_name, t_ui, fa_text
@@ -15,13 +18,13 @@ LINE   = HexColor('#444444')
 DASH   = HexColor('#111111')
 
 
-def fill_for(n):
+def fill_for(n: dict[str, Any]) -> Color:
     if n.get('root'):
         return ROOT_F
     return MALE_F if n['g'] == 'm' else FEM_F
 
 
-def disp_name(n, lang):
+def disp_name(n: dict[str, Any], lang: str) -> str:
     s = t_name(n['name'], lang)
     if n.get('alias'):
         alias = t_name(n['alias'], lang)
@@ -31,7 +34,7 @@ def disp_name(n, lang):
     return fa_text(s, lang)
 
 
-def subline(n, lang):
+def subline(n: dict[str, Any], lang: str) -> str | None:
     sp = t_name(n['sp'], lang) if n.get('sp') else None
     prefix = ''
     if n.get('bridge'):
@@ -45,7 +48,8 @@ def subline(n, lang):
     return None
 
 
-def draw_box(cv, x, y, w, h, fill, name, sub, lang, bold=False, font=9.3):
+def draw_box(cv: Canvas, x: float, y: float, w: float, h: float, fill: Color,
+             name: str, sub: str | None, lang: str, bold: bool = False, font: float = 9.3) -> None:
     cv.setFillColor(fill)
     cv.setStrokeColor(BORDER)
     cv.setLineWidth(2.2 if bold else 0.8)
@@ -61,7 +65,7 @@ def draw_box(cv, x, y, w, h, fill, name, sub, lang, bold=False, font=9.3):
         cv.drawCentredString(x + w / 2, y - 3, name)
 
 
-def draw_node(cv, n, ph, lang):
+def draw_node(cv: Canvas, n: dict[str, Any], ph: float, lang: str) -> None:
     x = n['x']
     y = ph - n['y']
     if n.get('root'):
@@ -80,7 +84,7 @@ def draw_node(cv, n, ph, lang):
              disp_name(n, lang), subline(n, lang), lang, bold=bool(n.get('bridge')))
 
 
-def draw_connectors(cv, n, ph):
+def draw_connectors(cv: Canvas, n: dict[str, Any], ph: float) -> None:
     if not n['kids']:
         return
     px = n['x'] + BOX_W
@@ -99,7 +103,8 @@ def draw_connectors(cv, n, ph):
         draw_connectors(cv, k, ph)
 
 
-def draw_title(cv, title, subtitle, lang, x, ty, tsize, ssize):
+def draw_title(cv: Canvas, title: str, subtitle: str, lang: str, x: float,
+               ty: float, tsize: float, ssize: float) -> None:
     """Title + subtitle anchored at edge x (right for Persian/RTL, left for English)."""
     draw = cv.drawRightString if lang == 'fa' else cv.drawString
     cv.setFillColor(TXT)
@@ -110,8 +115,10 @@ def draw_title(cv, title, subtitle, lang, x, ty, tsize, ssize):
     draw(x, ty - tsize + 3, fa_text(subtitle, lang))
 
 
-def draw_page(cv, tree, title, subtitle, legend_items, lang, cousin_link, pw, ph,
-              draw_title_flag=True):
+def draw_page(cv: Canvas, tree: dict[str, Any], title: str, subtitle: str,
+              legend_items: list[tuple[str, str]], lang: str,
+              cousin_link: tuple[str, int, str] | None,
+              pw: float, ph: float, draw_title_flag: bool = True) -> None:
     """Draw the whole page content in natural coordinates (0..pw, 0..ph).
     The caller is responsible for page size and any transform (e.g. tiling)."""
     cv.setFillColor(BG)
@@ -164,7 +171,7 @@ def draw_page(cv, tree, title, subtitle, legend_items, lang, cousin_link, pw, ph
         cv.drawString(lx + 26, yy - 3, fa_text(t, lang))
 
 
-def legend_basic(lang, with_step=False):
+def legend_basic(lang: str, with_step: bool = False) -> list[tuple[str, str]]:
     items = [
         ('maleF',  t_ui('legend_male', lang)),
         ('femF',   t_ui('legend_female', lang)),
@@ -175,7 +182,7 @@ def legend_basic(lang, with_step=False):
     return items
 
 
-def legend_with_cousin(lang, with_step=False):
+def legend_with_cousin(lang: str, with_step: bool = False) -> list[tuple[str, str]]:
     base = legend_basic(lang, with_step=False)
     items = base + [('cousin', t_ui('cousins_married', lang))]
     if with_step:
