@@ -32,4 +32,4 @@ def fa_text(text: str, lang: str) -> str:
 
 def star_suffix(lang: str) -> str:
     """'  |  * = ' (fa) or '  |  ★ = ' (en/nl) — used in page subtitles."""
-    return '  |  %s = ' % STAR[lang]
+    return f'  |  {STAR[lang]} = '

@@ -12,7 +12,7 @@ import argparse
 from collections.abc import Sequence
 from pathlib import Path
 
-from family_tree.render import build_pdf, A4_LANDSCAPE
+from family_tree.render import A4_LANDSCAPE, build_pdf
 from family_tree.trees import ALL
 
 

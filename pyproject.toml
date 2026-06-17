@@ -25,6 +25,13 @@ where = ["src"]
 [tool.setuptools.package-data]
 family_tree = ["data/*.json", "data/trees/*.yaml", "assets/fonts/*"]
 
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
 [tool.pyright]
 pythonVersion = "3.12"
 typeCheckingMode = "basic"

@@ -3,9 +3,9 @@ from typing import Any
 from reportlab.lib.colors import Color, HexColor, white
 from reportlab.pdfgen.canvas import Canvas
 
-from family_tree.fonts import FONT_REG, FONT_BOLD, FONT_SUB, FONT_SUB_SIZE, STAR
-from family_tree.translations import t_name, t_ui, fa_text
-from family_tree.layout import BOX_W, BOX_UNIFORM, COL_W, MARGIN_X, find
+from family_tree.fonts import FONT_BOLD, FONT_REG, FONT_SUB, FONT_SUB_SIZE, STAR
+from family_tree.layout import BOX_UNIFORM, BOX_W, COL_W, MARGIN_X, find
+from family_tree.translations import fa_text, t_name, t_ui
 
 # Colour palette
 BG     = white
@@ -28,7 +28,7 @@ def disp_name(n: dict[str, Any], lang: str) -> str:
     s = t_name(n['name'], lang)
     if n.get('alias'):
         alias = t_name(n['alias'], lang)
-        s = '%s ("%s")' % (s, alias) if lang == 'en' else '%s (%s)' % (s, alias)
+        s = f'{s} ("{alias}")' if lang == 'en' else f'{s} ({alias})'
     if n.get('star'):
         s = s + '  ' + STAR[lang]
     return fa_text(s, lang)
@@ -40,11 +40,11 @@ def subline(n: dict[str, Any], lang: str) -> str | None:
     if n.get('bridge'):
         bridge_txt = n['bridge'] if lang == 'en' else \
             t_ui('see_paternal' if 'paternal' in n['bridge'] else 'see_maternal', lang)
-        return fa_text('%s%s   %s' % (prefix, sp, bridge_txt), lang)
+        return fa_text(f'{prefix}{sp}   {bridge_txt}', lang)
     if n.get('sp2'):
-        return fa_text('%s%s / %s' % (prefix, sp, t_name(n['sp2'], lang)), lang)
+        return fa_text('{}{} / {}'.format(prefix, sp, t_name(n['sp2'], lang)), lang)
     if n.get('sp'):
-        return fa_text('%s%s' % (prefix, sp), lang)
+        return fa_text(f'{prefix}{sp}', lang)
     return None
 
 

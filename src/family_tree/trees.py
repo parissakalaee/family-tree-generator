@@ -9,13 +9,13 @@ To add a new family: drop a ``<name>.yaml`` next to the others (see the header
 of ``emma.yaml`` for the schema) — it is picked up automatically.
 """
 
+from importlib.resources import files
 from typing import Any
 
 import yaml
-from importlib.resources import files
 
-from family_tree.translations import t_ui, t_name, star_suffix
 from family_tree.drawing import legend_basic, legend_with_cousin
+from family_tree.translations import star_suffix, t_name, t_ui
 
 # Auto-discover all YAML files in the trees data directory.
 _NAMES = tuple(
@@ -69,8 +69,8 @@ class FamilyTree:
 
 
 def _load(name: str) -> FamilyTree:
-    text = files('family_tree').joinpath('data', 'trees', f'{name}.yaml').read_text(encoding='utf-8')
-    return FamilyTree(yaml.safe_load(text))
+    path = files('family_tree').joinpath('data', 'trees', f'{name}.yaml')
+    return FamilyTree(yaml.safe_load(path.read_text(encoding='utf-8')))
 
 
 # Registry used by the CLI: name -> FamilyTree.

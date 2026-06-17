@@ -21,7 +21,9 @@ FONT_REG = {'fa': 'Vazir', 'en': 'Helvetica', 'nl': 'Helvetica'}
 FONT_BOLD = {'fa': 'VazirBold', 'en': 'Helvetica-Bold', 'nl': 'Helvetica-Bold'}
 FONT_SUB = {'fa': 'Vazir', 'en': 'Helvetica-Oblique', 'nl': 'Helvetica-Oblique'}
 FONT_SUB_SIZE = {'fa': 7.5, 'en': 7.0, 'nl': 7.0}
-FONT_COUSIN_LABEL = {'fa': 'VazirBold', 'en': 'Helvetica-BoldOblique', 'nl': 'Helvetica-BoldOblique'}
+FONT_COUSIN_LABEL = {
+    'fa': 'VazirBold', 'en': 'Helvetica-BoldOblique', 'nl': 'Helvetica-BoldOblique',
+}
 STAR = {'fa': '*', 'en': '★', 'nl': '★'}  # Vazirmatn has no star glyph, so use *
 
 _registered = False

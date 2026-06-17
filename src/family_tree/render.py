@@ -6,9 +6,9 @@ from typing import Any
 from reportlab.pdfgen import canvas
 from reportlab.pdfgen.canvas import Canvas
 
+from family_tree.drawing import draw_page, draw_title
 from family_tree.fonts import register_fonts
 from family_tree.layout import page_size
-from family_tree.drawing import draw_page, draw_title
 
 A4: tuple[float, float] = (595.27, 841.89)
 A4_LANDSCAPE: tuple[float, float] = (841.89, 595.27)
