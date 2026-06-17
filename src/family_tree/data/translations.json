@@ -1,0 +1,98 @@
+{
+  "_note": "Add translations per language. 'en' is the source. Leave blank if same across languages.",
+  "names": {
+    "Anna":      { "en": "Anna",      "nl": "Anna" },
+    "Bas":       { "en": "Bas",       "nl": "Bas" },
+    "Bo":        { "en": "Bo",        "nl": "Bo" },
+    "Bram":      { "en": "Bram",      "nl": "Bram" },
+    "Cornelia":  { "en": "Cornelia",  "nl": "Cornelia" },
+    "Daan":      { "en": "Daan",      "nl": "Daan" },
+    "Dirk":      { "en": "Dirk",      "nl": "Dirk" },
+    "Eline":     { "en": "Eline",     "nl": "Eline" },
+    "Emma":      { "en": "Emma",      "nl": "Emma" },
+    "Erik":      { "en": "Erik",      "nl": "Erik" },
+    "Eva":       { "en": "Eva",       "nl": "Eva" },
+    "Fenna":     { "en": "Fenna",     "nl": "Fenna" },
+    "Finn":      { "en": "Finn",      "nl": "Finn" },
+    "Fleur":     { "en": "Fleur",     "nl": "Fleur" },
+    "Hanna":     { "en": "Hanna",     "nl": "Hanna" },
+    "Hendrik":   { "en": "Hendrik",   "nl": "Hendrik" },
+    "Inge":      { "en": "Inge",      "nl": "Inge" },
+    "Jan":       { "en": "Jan",       "nl": "Jan" },
+    "Johanna":   { "en": "Johanna",   "nl": "Johanna" },
+    "Joke":      { "en": "Joke",      "nl": "Joke" },
+    "Koen":      { "en": "Koen",      "nl": "Koen" },
+    "Lars":      { "en": "Lars",      "nl": "Lars" },
+    "Lena":      { "en": "Lena",      "nl": "Lena" },
+    "Lies":      { "en": "Lies",      "nl": "Lies" },
+    "Lisa":      { "en": "Lisa",      "nl": "Lisa" },
+    "Lisa":      { "en": "Lisa",      "nl": "Lisa" },
+    "Lotte":     { "en": "Lotte",     "nl": "Lotte" },
+    "Luuk":      { "en": "Luuk",      "nl": "Luuk" },
+    "Marco":     { "en": "Marco",     "nl": "Marco" },
+    "Maria":     { "en": "Maria",     "nl": "Maria" },
+    "Maud":      { "en": "Maud",      "nl": "Maud" },
+    "Max":       { "en": "Max",       "nl": "Max" },
+    "Niels":     { "en": "Niels",     "nl": "Niels" },
+    "Nina":      { "en": "Nina",      "nl": "Nina" },
+    "Nora":      { "en": "Nora",      "nl": "Nora" },
+    "Pieter":    { "en": "Pieter",    "nl": "Pieter" },
+    "Roos":      { "en": "Roos",      "nl": "Roos" },
+    "Ruben":     { "en": "Ruben",     "nl": "Ruben" },
+    "Sophie":    { "en": "Sophie",    "nl": "Sophie" },
+    "Sven":      { "en": "Sven",      "nl": "Sven" },
+    "Thijs":     { "en": "Thijs",     "nl": "Thijs" },
+    "Tim":       { "en": "Tim",       "nl": "Tim" },
+    "Tom":       { "en": "Tom",       "nl": "Tom" },
+    "Vera":      { "en": "Vera",      "nl": "Vera" },
+    "Wilhelmina":{ "en": "Wilhelmina","nl": "Wilhelmina" },
+    "Wil":       { "en": "Wil",       "nl": "Wil" },
+    "Willem":    { "en": "Willem",    "nl": "Willem" }
+  },
+  "ui": {
+    "maternal_title": {
+      "en": "De Vries Family – Maternal Side",
+      "nl": "Familie de Vries – Moederskant"
+    },
+    "paternal_title": {
+      "en": "De Vries Family – Paternal Side",
+      "nl": "Familie de Vries – Vaderskant"
+    },
+    "maternal_subtitle": {
+      "en": "Grandparents: Hendrik & Maria",
+      "nl": "Grootouders: Hendrik & Maria"
+    },
+    "paternal_subtitle": {
+      "en": "Grandparents: Jan & Cornelia",
+      "nl": "Grootouders: Jan & Cornelia"
+    },
+    "see_paternal": {
+      "en": "(see paternal page)",
+      "nl": "(zie vaderskant)"
+    },
+    "see_maternal": {
+      "en": "(see maternal page)",
+      "nl": "(zie moederskant)"
+    },
+    "legend_male": {
+      "en": "Male",
+      "nl": "Man"
+    },
+    "legend_female": {
+      "en": "Female",
+      "nl": "Vrouw"
+    },
+    "legend_bridge": {
+      "en": "Appears on both pages",
+      "nl": "Verschijnt op beide pagina's"
+    },
+    "legend_step": {
+      "en": "Step-child",
+      "nl": "Stiefkind"
+    },
+    "cousins_married": {
+      "en": "cousins married",
+      "nl": "neven/nichten getrouwd"
+    }
+  }
+}

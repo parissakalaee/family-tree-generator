@@ -1,0 +1,22 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+src/*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# Generated output
+output/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

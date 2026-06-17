@@ -1,0 +1,135 @@
+# =============================================================================
+#  Sample Family Tree — fictional Dutch family (de Vries / de Groot)
+# =============================================================================
+# This file is intentionally fictional and is provided as a working example.
+# Replace names and structure with your own family data.
+#
+# A person (node) looks like:
+#   name:  canonical English key (mapped to display text in translations.json)
+#   g:     gender — "m" or "f" (controls box colour)
+#   sp:    spouse name key            (optional)
+#   sp2:   second spouse name key     (optional, shown as "sp / sp2")
+#   alias: nickname, shown as Name ("Alias")   (optional)
+#   kids:  list of child nodes        (optional)
+#
+# Flags (optional, set to true):
+#   root        grey two-box root couple at the start of a page
+#   star        marks the "you are here" person (★)
+#   cousin      spouse subline shows "(cousin)"
+#   cousin_src  the other end of a cousin marriage
+#   step        dotted connector line to this child
+# Special:
+#   bridge: "(see paternal page)"  couple shown on both pages (thick border)
+# =============================================================================
+
+slug: sample_family_tree
+
+pages:
+  # ── MATERNAL PAGE ─────────────────────────────────────────────────────────
+  - title: maternal_title
+    subtitle: maternal_subtitle
+    star_person: Emma
+    legend: basic
+    tree:
+      name: Hendrik
+      g: m
+      sp: Maria
+      root: true
+      kids:
+        - name: Anna
+          g: f
+          sp: Pieter
+          bridge: "(see paternal page)"
+          kids:
+            - name: Emma
+              g: f
+              sp: Lars
+              star: true
+              kids:
+                - { name: Finn, g: m }
+                - { name: Nora, g: f }
+            - name: Daan
+              g: m
+              sp: Lotte
+              kids:
+                - { name: Tim, g: m }
+                - { name: Roos, g: f }
+        - name: Willem
+          g: m
+          sp: Inge
+          kids:
+            - name: Koen
+              g: m
+              sp: Fleur
+              kids:
+                - { name: Bo, g: m }
+                - { name: Vera, g: f }
+            - { name: Lies, g: f, alias: Lisa }
+        - name: Johanna
+          g: f
+          alias: Joke
+          sp: Bas
+          kids:
+            - name: Luuk
+              g: m
+              sp: Fenna
+              kids:
+                - { name: Thijs, g: m }
+            - { name: Maud, g: f }
+
+  # ── PATERNAL PAGE ─────────────────────────────────────────────────────────
+  - title: paternal_title
+    subtitle: paternal_subtitle
+    star_person: Emma
+    legend: basic
+    tree:
+      name: Jan
+      g: m
+      sp: Cornelia
+      root: true
+      kids:
+        - name: Pieter
+          g: m
+          sp: Anna
+          bridge: "(see maternal page)"
+          kids:
+            - name: Emma
+              g: f
+              sp: Lars
+              star: true
+              kids:
+                - { name: Finn, g: m }
+                - { name: Nora, g: f }
+            - name: Daan
+              g: m
+              sp: Lotte
+              kids:
+                - { name: Tim, g: m }
+                - { name: Roos, g: f }
+        - name: Sophie
+          g: f
+          sp: Erik
+          kids:
+            - name: Ruben
+              g: m
+              sp: Hanna
+              kids:
+                - { name: Sven, g: m }
+                - { name: Eline, g: f }
+            - { name: Marco, g: m }
+        - name: Niels
+          g: m
+          sp: Wilhelmina
+          alias: Wil
+          kids:
+            - name: Dirk
+              g: m
+              sp: Eva
+              kids:
+                - { name: Max, g: m }
+                - { name: Nina, g: f }
+            - name: Lena
+              g: f
+              sp: Tom
+              kids:
+                - { name: Bram, g: m }
