@@ -6,8 +6,9 @@ from bidi.algorithm import get_display
 
 from family_tree.fonts import STAR
 
-with files('family_tree').joinpath('data', 'translations.json').open(encoding='utf-8') as f:
-    _T: dict[str, dict[str, dict[str, str]]] = json.load(f)
+_T: dict[str, dict[str, dict[str, str]]] = json.loads(
+    files('family_tree').joinpath('data', 'translations.json').read_text(encoding='utf-8')
+)
 
 
 def t_name(key: str, lang: str) -> str:

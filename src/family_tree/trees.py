@@ -69,9 +69,8 @@ class FamilyTree:
 
 
 def _load(name: str) -> FamilyTree:
-    path = files('family_tree').joinpath('data', 'trees', f'{name}.yaml')
-    with path.open(encoding='utf-8') as f:
-        return FamilyTree(yaml.safe_load(f))
+    text = files('family_tree').joinpath('data', 'trees', f'{name}.yaml').read_text(encoding='utf-8')
+    return FamilyTree(yaml.safe_load(text))
 
 
 # Registry used by the CLI: name -> FamilyTree.
