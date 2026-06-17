@@ -10,6 +10,8 @@ A Python tool that generates multilingual family tree PDFs from simple YAML file
 - Supports aliases, step-children, and bridge nodes (couples spanning both pages)
 - RTL language support (Arabic, Persian, Hebrew, …)
 
+![Family tree example](assets/screenshot.png)
+
 ## Quick start
 
 ```bash
@@ -25,6 +27,8 @@ PDFs are written to `output/`. By default all available trees and all three lang
 |------|------|-------------|
 | Emma | `emma.yaml` | Fictional Dutch de Vries family, centred on Emma |
 | Lars | `lars.yaml` | Fictional Dutch family of Lars (Emma's husband) |
+
+Generated PDFs for both trees (English, Dutch, Persian) are in the [`output/`](output/) folder.
 
 ## Language options
 
