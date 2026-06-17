@@ -26,6 +26,7 @@ where = ["src"]
 family_tree = ["data/*.json", "data/trees/*.yaml", "assets/fonts/*"]
 
 [tool.pyright]
+pythonVersion = "3.10"
 typeCheckingMode = "basic"
 
 [tool.mypy]
