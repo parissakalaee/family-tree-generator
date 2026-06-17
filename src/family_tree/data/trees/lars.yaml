@@ -1,0 +1,81 @@
+slug: lars_family_tree
+
+pages:
+  # ── MATERNAL PAGE ─────────────────────────────────────────────────────────
+  - title: lars_maternal_title
+    subtitle: lars_maternal_subtitle
+    star_person: Lars
+    legend: basic
+    tree:
+      name: Gerrit
+      g: m
+      sp: Grietje
+      root: true
+      kids:
+        - name: Femke
+          g: f
+          sp: Henk
+          bridge: "(see paternal page)"
+          kids:
+            - name: Lars
+              g: m
+              sp: Emma
+              star: true
+              kids:
+                - { name: Finn, g: m }
+                - { name: Nora, g: f }
+            - name: Anneke
+              g: f
+              sp: Roel
+              kids:
+                - { name: Sjoerd, g: m }
+                - { name: Tineke, g: f }
+        - name: Maarten
+          g: m
+          sp: Mirjam
+          kids:
+            - { name: Joost, g: m }
+            - name: Liesbeth
+              g: f
+              sp: Wouter
+
+  # ── PATERNAL PAGE ─────────────────────────────────────────────────────────
+  - title: lars_paternal_title
+    subtitle: lars_paternal_subtitle
+    star_person: Lars
+    legend: basic
+    tree:
+      name: Adriaan
+      g: m
+      sp: Clasina
+      root: true
+      kids:
+        - name: Henk
+          g: m
+          sp: Femke
+          bridge: "(see maternal page)"
+          kids:
+            - name: Lars
+              g: m
+              sp: Emma
+              star: true
+              kids:
+                - { name: Finn, g: m }
+                - { name: Nora, g: f }
+            - name: Anneke
+              g: f
+              sp: Roel
+              kids:
+                - { name: Sjoerd, g: m }
+                - { name: Tineke, g: f }
+        - name: Dirk
+          g: m
+          sp: Eva
+          kids:
+            - { name: Max, g: m }
+            - { name: Nina, g: f }
+        - name: Lena
+          g: f
+          sp: Tom
+          kids:
+            - { name: Bram, g: m }

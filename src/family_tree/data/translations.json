@@ -1,98 +1,143 @@
 {
   "_note": "Add translations per language. 'en' is the source. Leave blank if same across languages.",
   "names": {
-    "Anna":      { "en": "Anna",      "nl": "Anna" },
-    "Bas":       { "en": "Bas",       "nl": "Bas" },
-    "Bo":        { "en": "Bo",        "nl": "Bo" },
-    "Bram":      { "en": "Bram",      "nl": "Bram" },
-    "Cornelia":  { "en": "Cornelia",  "nl": "Cornelia" },
-    "Daan":      { "en": "Daan",      "nl": "Daan" },
-    "Dirk":      { "en": "Dirk",      "nl": "Dirk" },
-    "Eline":     { "en": "Eline",     "nl": "Eline" },
-    "Emma":      { "en": "Emma",      "nl": "Emma" },
-    "Erik":      { "en": "Erik",      "nl": "Erik" },
-    "Eva":       { "en": "Eva",       "nl": "Eva" },
-    "Fenna":     { "en": "Fenna",     "nl": "Fenna" },
-    "Finn":      { "en": "Finn",      "nl": "Finn" },
-    "Fleur":     { "en": "Fleur",     "nl": "Fleur" },
-    "Hanna":     { "en": "Hanna",     "nl": "Hanna" },
-    "Hendrik":   { "en": "Hendrik",   "nl": "Hendrik" },
-    "Inge":      { "en": "Inge",      "nl": "Inge" },
-    "Jan":       { "en": "Jan",       "nl": "Jan" },
-    "Johanna":   { "en": "Johanna",   "nl": "Johanna" },
-    "Joke":      { "en": "Joke",      "nl": "Joke" },
-    "Koen":      { "en": "Koen",      "nl": "Koen" },
-    "Lars":      { "en": "Lars",      "nl": "Lars" },
-    "Lena":      { "en": "Lena",      "nl": "Lena" },
-    "Lies":      { "en": "Lies",      "nl": "Lies" },
-    "Lisa":      { "en": "Lisa",      "nl": "Lisa" },
-    "Lisa":      { "en": "Lisa",      "nl": "Lisa" },
-    "Lotte":     { "en": "Lotte",     "nl": "Lotte" },
-    "Luuk":      { "en": "Luuk",      "nl": "Luuk" },
-    "Marco":     { "en": "Marco",     "nl": "Marco" },
-    "Maria":     { "en": "Maria",     "nl": "Maria" },
-    "Maud":      { "en": "Maud",      "nl": "Maud" },
-    "Max":       { "en": "Max",       "nl": "Max" },
-    "Niels":     { "en": "Niels",     "nl": "Niels" },
-    "Nina":      { "en": "Nina",      "nl": "Nina" },
-    "Nora":      { "en": "Nora",      "nl": "Nora" },
-    "Pieter":    { "en": "Pieter",    "nl": "Pieter" },
-    "Roos":      { "en": "Roos",      "nl": "Roos" },
-    "Ruben":     { "en": "Ruben",     "nl": "Ruben" },
-    "Sophie":    { "en": "Sophie",    "nl": "Sophie" },
-    "Sven":      { "en": "Sven",      "nl": "Sven" },
-    "Thijs":     { "en": "Thijs",     "nl": "Thijs" },
-    "Tim":       { "en": "Tim",       "nl": "Tim" },
-    "Tom":       { "en": "Tom",       "nl": "Tom" },
-    "Vera":      { "en": "Vera",      "nl": "Vera" },
-    "Wilhelmina":{ "en": "Wilhelmina","nl": "Wilhelmina" },
-    "Wil":       { "en": "Wil",       "nl": "Wil" },
-    "Willem":    { "en": "Willem",    "nl": "Willem" }
+    "Anna":      { "en": "Anna",      "nl": "Anna",      "fa": "آنا" },
+    "Bas":       { "en": "Bas",       "nl": "Bas",       "fa": "باس" },
+    "Bo":        { "en": "Bo",        "nl": "Bo",        "fa": "بو" },
+    "Bram":      { "en": "Bram",      "nl": "Bram",      "fa": "برام" },
+    "Cornelia":  { "en": "Cornelia",  "nl": "Cornelia",  "fa": "کورنلیا" },
+    "Daan":      { "en": "Daan",      "nl": "Daan",      "fa": "دان" },
+    "Dirk":      { "en": "Dirk",      "nl": "Dirk",      "fa": "دیرک" },
+    "Eline":     { "en": "Eline",     "nl": "Eline",     "fa": "الینه" },
+    "Emma":      { "en": "Emma",      "nl": "Emma",      "fa": "اِما" },
+    "Erik":      { "en": "Erik",      "nl": "Erik",      "fa": "اریک" },
+    "Eva":       { "en": "Eva",       "nl": "Eva",       "fa": "اِوا" },
+    "Fenna":     { "en": "Fenna",     "nl": "Fenna",     "fa": "فنا" },
+    "Finn":      { "en": "Finn",      "nl": "Finn",      "fa": "فین" },
+    "Fleur":     { "en": "Fleur",     "nl": "Fleur",     "fa": "فلور" },
+    "Hanna":     { "en": "Hanna",     "nl": "Hanna",     "fa": "هانا" },
+    "Hendrik":   { "en": "Hendrik",   "nl": "Hendrik",   "fa": "هِندریک" },
+    "Inge":      { "en": "Inge",      "nl": "Inge",      "fa": "اینگه" },
+    "Jan":       { "en": "Jan",       "nl": "Jan",       "fa": "یان" },
+    "Johanna":   { "en": "Johanna",   "nl": "Johanna",   "fa": "یوهانا" },
+    "Joke":      { "en": "Joke",      "nl": "Joke",      "fa": "یوکه" },
+    "Koen":      { "en": "Koen",      "nl": "Koen",      "fa": "کوئن" },
+    "Lars":      { "en": "Lars",      "nl": "Lars",      "fa": "لارس" },
+    "Lena":      { "en": "Lena",      "nl": "Lena",      "fa": "لِنا" },
+    "Lies":      { "en": "Lies",      "nl": "Lies",      "fa": "لیس" },
+    "Lisa":      { "en": "Lisa",      "nl": "Lisa",      "fa": "لیسا" },
+    "Lotte":     { "en": "Lotte",     "nl": "Lotte",     "fa": "لوته" },
+    "Luuk":      { "en": "Luuk",      "nl": "Luuk",      "fa": "لوک" },
+    "Marco":     { "en": "Marco",     "nl": "Marco",     "fa": "مارکو" },
+    "Maria":     { "en": "Maria",     "nl": "Maria",     "fa": "ماریا" },
+    "Maud":      { "en": "Maud",      "nl": "Maud",      "fa": "مود" },
+    "Max":       { "en": "Max",       "nl": "Max",       "fa": "مکس" },
+    "Niels":     { "en": "Niels",     "nl": "Niels",     "fa": "نیلس" },
+    "Nina":      { "en": "Nina",      "nl": "Nina",      "fa": "نینا" },
+    "Nora":      { "en": "Nora",      "nl": "Nora",      "fa": "نورا" },
+    "Pieter":    { "en": "Pieter",    "nl": "Pieter",    "fa": "پیتر" },
+    "Roos":      { "en": "Roos",      "nl": "Roos",      "fa": "روس" },
+    "Ruben":     { "en": "Ruben",     "nl": "Ruben",     "fa": "روبن" },
+    "Sophie":    { "en": "Sophie",    "nl": "Sophie",    "fa": "سوفی" },
+    "Sven":      { "en": "Sven",      "nl": "Sven",      "fa": "سوِن" },
+    "Thijs":     { "en": "Thijs",     "nl": "Thijs",     "fa": "تایس" },
+    "Tim":       { "en": "Tim",       "nl": "Tim",       "fa": "تیم" },
+    "Tom":       { "en": "Tom",       "nl": "Tom",       "fa": "تام" },
+    "Vera":      { "en": "Vera",      "nl": "Vera",      "fa": "ورا" },
+    "Wilhelmina":{ "en": "Wilhelmina","nl": "Wilhelmina", "fa": "ویلهلمینا" },
+    "Wil":       { "en": "Wil",       "nl": "Wil",       "fa": "ویل" },
+    "Willem":    { "en": "Willem",    "nl": "Willem",    "fa": "ویلم" },
+    "Adriaan":   { "en": "Adriaan",   "nl": "Adriaan",   "fa": "آدریان" },
+    "Anneke":    { "en": "Anneke",    "nl": "Anneke",    "fa": "آنکه" },
+    "Clasina":   { "en": "Clasina",   "nl": "Clasina",   "fa": "کلاسینا" },
+    "Femke":     { "en": "Femke",     "nl": "Femke",     "fa": "فِمکه" },
+    "Gerrit":    { "en": "Gerrit",    "nl": "Gerrit",    "fa": "هِریت" },
+    "Grietje":   { "en": "Grietje",   "nl": "Grietje",   "fa": "هریتیه" },
+    "Henk":      { "en": "Henk",      "nl": "Henk",      "fa": "هِنک" },
+    "Joost":     { "en": "Joost",     "nl": "Joost",     "fa": "یوست" },
+    "Liesbeth":  { "en": "Liesbeth",  "nl": "Liesbeth",  "fa": "لیسبِت" },
+    "Maarten":   { "en": "Maarten",   "nl": "Maarten",   "fa": "مارتن" },
+    "Mirjam":    { "en": "Mirjam",    "nl": "Mirjam",    "fa": "میریام" },
+    "Roel":      { "en": "Roel",      "nl": "Roel",      "fa": "رول" },
+    "Sjoerd":    { "en": "Sjoerd",    "nl": "Sjoerd",    "fa": "شورد" },
+    "Tineke":    { "en": "Tineke",    "nl": "Tineke",    "fa": "تینکه" },
+    "Wouter":    { "en": "Wouter",    "nl": "Wouter",    "fa": "واوتر" }
   },
   "ui": {
     "maternal_title": {
-      "en": "De Vries Family – Maternal Side",
-      "nl": "Familie de Vries – Moederskant"
+      "en": "Emma Family – Maternal Side",
+      "nl": "Familie Emma – Moederskant",
+      "fa": "خانواده مادری اِما"
     },
     "paternal_title": {
-      "en": "De Vries Family – Paternal Side",
-      "nl": "Familie de Vries – Vaderskant"
+      "en": "Emma Family – Paternal Side",
+      "nl": "Familie Emma – Vaderskant",
+      "fa": "خانواده پدری اِما"
     },
     "maternal_subtitle": {
       "en": "Grandparents: Hendrik & Maria",
-      "nl": "Grootouders: Hendrik & Maria"
+      "nl": "Grootouders: Hendrik & Maria",
+      "fa": "پدربزرگ و مادربزرگ: هِندریک و ماریا"
     },
     "paternal_subtitle": {
       "en": "Grandparents: Jan & Cornelia",
-      "nl": "Grootouders: Jan & Cornelia"
+      "nl": "Grootouders: Jan & Cornelia",
+      "fa": "پدربزرگ و مادربزرگ: یان و کورنلیا"
     },
     "see_paternal": {
       "en": "(see paternal page)",
-      "nl": "(zie vaderskant)"
+      "nl": "(zie vaderskant)",
+      "fa": "(صفحه خانواده پدری را ببینید)"
     },
     "see_maternal": {
       "en": "(see maternal page)",
-      "nl": "(zie moederskant)"
+      "nl": "(zie moederskant)",
+      "fa": "(صفحه خانواده مادری را ببینید)"
     },
     "legend_male": {
       "en": "Male",
-      "nl": "Man"
+      "nl": "Man",
+      "fa": "مذکر"
     },
     "legend_female": {
       "en": "Female",
-      "nl": "Vrouw"
+      "nl": "Vrouw",
+      "fa": "مونث"
     },
     "legend_bridge": {
       "en": "Appears on both pages",
-      "nl": "Verschijnt op beide pagina's"
+      "nl": "Verschijnt op beide pagina's",
+      "fa": "زوجی که در هر دو صفحه هستند"
     },
     "legend_step": {
       "en": "Step-child",
-      "nl": "Stiefkind"
+      "nl": "Stiefkind",
+      "fa": "فرزند ناتنی"
     },
     "cousins_married": {
       "en": "cousins married",
-      "nl": "neven/nichten getrouwd"
+      "nl": "neven/nichten getrouwd",
+      "fa": "ازدواج فامیلی"
+    },
+    "lars_maternal_title": {
+      "en": "Lars Family – Maternal Side",
+      "nl": "Familie Lars – Moederskant",
+      "fa": "خانواده مادری لارس"
+    },
+    "lars_paternal_title": {
+      "en": "Lars Family – Paternal Side",
+      "nl": "Familie Lars – Vaderskant",
+      "fa": "خانواده پدری لارس"
+    },
+    "lars_maternal_subtitle": {
+      "en": "Grandparents: Gerrit & Grietje",
+      "nl": "Grootouders: Gerrit & Grietje",
+      "fa": "پدربزرگ و مادربزرگ: هِریت و هریتیه"
+    },
+    "lars_paternal_subtitle": {
+      "en": "Grandparents: Adriaan & Clasina",
+      "nl": "Grootouders: Adriaan & Clasina",
+      "fa": "پدربزرگ و مادربزرگ: آدریان و کلاسینا"
     }
   }
 }

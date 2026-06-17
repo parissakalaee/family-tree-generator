@@ -6,7 +6,7 @@ A Python tool that generates multilingual family tree PDFs from simple YAML file
 
 - Define your family in a readable YAML file — no coding needed
 - Two-sided layout: maternal and paternal pages
-- Bilingual output (any two languages you define in `translations.json`)
+- Multilingual output — ships with English (`en`), Dutch (`nl`), and Persian/Farsi (`fa`)
 - Supports aliases, step-children, bridge nodes (couples spanning both pages), and cousin marriages
 - RTL language support (Arabic, Persian, Hebrew, …)
 
@@ -14,22 +14,44 @@ A Python tool that generates multilingual family tree PDFs from simple YAML file
 
 ```bash
 pip install -e .
-family-tree --tree sample --lang en
+family-tree
 ```
 
-The PDF is written to `output/`.
+PDFs are written to `output/`. By default all available trees and all three languages are generated.
 
-## Supported languages
+## Included example trees
 
-Pass `--lang` with any language code defined in `translations.json`. The sample data ships with `en` (English) and `nl` (Dutch).
+| Tree | File | Description |
+|------|------|-------------|
+| Emma | `emma.yaml` | Fictional Dutch de Vries family, centred on Emma |
+| Lars | `lars.yaml` | Fictional Dutch family of Lars (Emma's husband) |
+
+## Language options
+
+Pass `--lang` with any of the following codes, or omit it to generate all three:
+
+| Code | Language |
+|------|----------|
+| `en` | English |
+| `nl` | Dutch |
+| `fa` | Persian (Farsi) — rendered RTL with the bundled Vazirmatn font |
+| `all` | All of the above (default) |
+
+```bash
+family-tree --lang en          # English only
+family-tree emma --lang fa     # Emma tree in Farsi only
+family-tree lars --lang nl     # Lars tree in Dutch only
+```
 
 ## Defining your own family
 
-1. Copy `src/family_tree/data/trees/sample.yaml` and edit it with your own names and structure.
-2. Add name translations to `src/family_tree/data/translations.json`.
-3. Run `family-tree --tree <your-file-slug> --lang en`.
+1. Copy `src/family_tree/data/trees/emma.yaml` and fill it in with your own names and structure.
+2. Add name translations to `src/family_tree/data/translations.json` — one entry per person, with keys for each language you want to support.
+3. Add UI strings (page titles, subtitles) to the `ui` section of `translations.json`.
+4. Drop the file in `src/family_tree/data/trees/` — it is picked up automatically.
+5. Run `family-tree <your-tree-name>`.
 
-See the comments at the top of `sample.yaml` for all available node options.
+See the comments at the top of `emma.yaml` for all available node options.
 
 ## Requirements
 

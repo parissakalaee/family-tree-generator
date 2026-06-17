@@ -16,8 +16,12 @@ from family_tree.render import (
     t_ui, t_name, star_suffix, legend_basic, legend_with_cousin,
 )
 
-# Families to load. The name is what you type on the CLI: ``family-tree saber``.
-_NAMES = ('parissa', 'saber')
+# Auto-discover all YAML files in the trees data directory.
+_NAMES = tuple(
+    p.stem
+    for p in files('family_tree').joinpath('data', 'trees').iterdir()
+    if p.name.endswith('.yaml')
+)
 
 # Page `legend:` value -> builder in render.py.
 _LEGENDS = {'basic': legend_basic, 'cousin': legend_with_cousin}

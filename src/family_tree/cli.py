@@ -25,8 +25,8 @@ def main(argv=None):
         help='Which tree(s) to build (default: all).',
     )
     parser.add_argument(
-        '--lang', choices=['fa', 'en', 'both'], default='both',
-        help='Language to render (default: both).',
+        '--lang', choices=['fa', 'en', 'nl', 'all'], default='all',
+        help='Language to render (default: all).',
     )
     parser.add_argument(
         '--out', default='output', type=Path,
@@ -43,7 +43,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     trees = args.trees or sorted(ALL)
-    langs = ['fa', 'en'] if args.lang == 'both' else [args.lang]
+    langs = ['fa', 'en', 'nl'] if args.lang == 'all' else [args.lang]
     args.out.mkdir(parents=True, exist_ok=True)
 
     for name in trees:
