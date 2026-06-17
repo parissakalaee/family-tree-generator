@@ -7,7 +7,7 @@ A Python tool that generates multilingual family tree PDFs from simple YAML file
 - Define your family in a readable YAML file — no coding needed
 - Two-sided layout: maternal and paternal pages
 - Multilingual output — ships with English (`en`), Dutch (`nl`), and Persian/Farsi (`fa`)
-- Supports aliases, step-children, bridge nodes (couples spanning both pages), and cousin marriages
+- Supports aliases, step-children, and bridge nodes (couples spanning both pages)
 - RTL language support (Arabic, Persian, Hebrew, …)
 
 ## Quick start
@@ -51,7 +51,7 @@ The standard PDF is sized to fit one large page. To print it on regular A4 sheet
 family-tree emma --lang en --print
 ```
 
-This produces an extra `_a4` PDF alongside the normal one, tiled across multiple A4 sheets in landscape orientation. If the tree is very wide, use `--print-cols` to control how many sheets wide the tiling should be:
+This produces an extra `_a4` PDF alongside the normal one, tiled across multiple A4 sheets in landscape orientation. For wider trees, use `--print-cols` to set how many sheets wide the tiling should be — the Emma tree, for example, needs two:
 
 ```bash
 family-tree emma --lang en --print --print-cols 2

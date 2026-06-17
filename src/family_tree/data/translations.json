@@ -61,7 +61,20 @@
     "Roel":      { "en": "Roel",      "nl": "Roel",      "fa": "رول" },
     "Sjoerd":    { "en": "Sjoerd",    "nl": "Sjoerd",    "fa": "شورد" },
     "Tineke":    { "en": "Tineke",    "nl": "Tineke",    "fa": "تینکه" },
-    "Wouter":    { "en": "Wouter",    "nl": "Wouter",    "fa": "واوتر" }
+    "Wouter":    { "en": "Wouter",    "nl": "Wouter",    "fa": "واوتر" },
+    "Cas":       { "en": "Cas",       "nl": "Cas",       "fa": "کاس" },
+    "Gerard":    { "en": "Gerard",    "nl": "Gerard",    "fa": "هِرارد" },
+    "Jorn":      { "en": "Jorn",      "nl": "Jorn",      "fa": "یورن" },
+    "Kim":       { "en": "Kim",       "nl": "Kim",       "fa": "کیم" },
+    "Lara":      { "en": "Lara",      "nl": "Lara",      "fa": "لارا" },
+    "Lise":      { "en": "Lise",      "nl": "Lise",      "fa": "لیسه" },
+    "Noor":      { "en": "Noor",      "nl": "Noor",      "fa": "نور" },
+    "Petra":     { "en": "Petra",     "nl": "Petra",     "fa": "پِترا" },
+    "Rik":       { "en": "Rik",       "nl": "Rik",       "fa": "ریک" },
+    "Saar":      { "en": "Saar",      "nl": "Saar",      "fa": "سار" },
+    "Sara":      { "en": "Sara",      "nl": "Sara",      "fa": "سارا" },
+    "Stef":      { "en": "Stef",      "nl": "Stef",      "fa": "استف" },
+    "Tess":      { "en": "Tess",      "nl": "Tess",      "fa": "تِس" }
   },
   "ui": {
     "maternal_title": {

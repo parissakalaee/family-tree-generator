@@ -1,9 +1,6 @@
 # =============================================================================
-#  Sample Family Tree — fictional Dutch family (de Vries / de Groot)
+#  Emma Family Tree — fictional Dutch family (de Vries / de Groot)
 # =============================================================================
-# This file is intentionally fictional and is provided as a working example.
-# Replace names and structure with your own family data.
-#
 # A person (node) looks like:
 #   name:  canonical English key (mapped to display text in translations.json)
 #   g:     gender — "m" or "f" (controls box colour)
@@ -15,9 +12,7 @@
 # Flags (optional, set to true):
 #   root        grey two-box root couple at the start of a page
 #   star        marks the "you are here" person (★)
-#   cousin      spouse subline shows "(cousin)"
-#   cousin_src  the other end of a cousin marriage
-#   step        dotted connector line to this child
+#   step        dotted connector line to this child (step-child)
 # Special:
 #   bridge: "(see paternal page)"  couple shown on both pages (thick border)
 # =============================================================================
@@ -30,6 +25,7 @@ pages:
     subtitle: maternal_subtitle
     star_person: Emma
     legend: basic
+    steps: true
     tree:
       name: Hendrik
       g: m
@@ -58,12 +54,14 @@ pages:
           g: m
           sp: Inge
           kids:
+            - { name: Stef, g: m, step: true }
             - name: Koen
               g: m
               sp: Fleur
               kids:
                 - { name: Bo, g: m }
                 - { name: Vera, g: f }
+                - { name: Lise, g: f }
             - { name: Lies, g: f, alias: Lisa }
         - name: Johanna
           g: f
@@ -75,7 +73,19 @@ pages:
               sp: Fenna
               kids:
                 - { name: Thijs, g: m }
-            - { name: Maud, g: f }
+                - { name: Sara, g: f }
+            - name: Maud
+              g: f
+              sp: Jorn
+              kids:
+                - { name: Rik, g: m }
+        - name: Gerard
+          g: m
+          sp: Petra
+          kids:
+            - { name: Tess, g: f }
+            - { name: Cas, g: m }
+            - { name: Lara, g: f }
 
   # ── PATERNAL PAGE ─────────────────────────────────────────────────────────
   - title: paternal_title
@@ -116,7 +126,9 @@ pages:
               kids:
                 - { name: Sven, g: m }
                 - { name: Eline, g: f }
+                - { name: Noor, g: f }
             - { name: Marco, g: m }
+            - { name: Kim, g: f }
         - name: Niels
           g: m
           sp: Wilhelmina
@@ -133,3 +145,4 @@ pages:
               sp: Tom
               kids:
                 - { name: Bram, g: m }
+                - { name: Saar, g: f }
