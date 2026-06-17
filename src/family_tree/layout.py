@@ -8,7 +8,7 @@ MARGIN_TOP = 100
 MARGIN_BOT = 45
 
 
-def P(name, g, sp=None, sp2=None, kids=None, **kw):
+def person(name, g, sp=None, sp2=None, kids=None, **kw):
     d = {'name': name, 'g': g, 'sp': sp, 'sp2': sp2, 'kids': kids or []}
     d.update(kw)
     return d
