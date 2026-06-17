@@ -72,7 +72,7 @@ DASH   = HexColor('#111111')
 
 # ── Geometry ──────────────────────────────────────────────────────────────────
 ROW_H = 40; COL_W = 180; BOX_W = 150; BOX_UNIFORM = 36
-MARGIN_X = 40; MARGIN_TOP = 100; MARGIN_BOT = 35
+MARGIN_X = 40; MARGIN_TOP = 100; MARGIN_BOT = 45
 
 
 def P(name, g, sp=None, sp2=None, kids=None, **kw):
