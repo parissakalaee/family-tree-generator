@@ -26,7 +26,7 @@ where = ["src"]
 family_tree = ["data/*.json", "data/trees/*.yaml", "assets/fonts/*"]
 
 [dependency-groups]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "ruff>=0.4"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
