@@ -8,7 +8,7 @@ A Python tool that generates multilingual family tree PDFs from simple YAML file
 - Two-sided layout: maternal and paternal pages
 - Multilingual output — ships with English (`en`), Dutch (`nl`), and Persian/Farsi (`fa`)
 - Supports aliases, step-children, and bridge nodes (couples spanning both pages)
-- RTL language support (Arabic, Persian, Hebrew, …)
+- RTL support for Persian/Farsi via the bundled Vazirmatn font and python-bidi
 
 ![Family tree example](assets/screenshot.png)
 
@@ -75,7 +75,7 @@ See the comments at the top of `emma.yaml` for all available node options.
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.12+
 - [reportlab](https://www.reportlab.com/) for PDF rendering
 - [python-bidi](https://github.com/MeirKriheli/python-bidi) and [arabic-reshaper](https://github.com/mpcabd/python-arabic-reshaper) for RTL support
 
