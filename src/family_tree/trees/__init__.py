@@ -6,7 +6,7 @@ mapping ``name -> FamilyTree``. Every FamilyTree provides ``SLUG`` and
 ``make_pages(lang)``, the same interface the CLI consumes.
 
 To add a new family: drop a ``<name>.yaml`` next to the others (see the header
-of ``parissa.yaml`` for the schema) and add its name to ``_NAMES`` below.
+of ``emma.yaml`` for the schema) — it is picked up automatically.
 """
 
 import yaml

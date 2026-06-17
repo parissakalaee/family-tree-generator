@@ -2,9 +2,9 @@
 Command-line entry point for building family-tree PDFs.
 
 Examples:
-    family-tree                  # build every tree, both languages
-    family-tree parissa          # just the Parissa tree, both languages
-    family-tree saber --lang fa  # just the Saber tree, Persian only
+    family-tree                  # build every tree, all languages
+    family-tree emma             # just the Emma tree, all languages
+    family-tree lars --lang fa   # just the Lars tree, Persian only
     family-tree --out /tmp/pdfs  # choose the output directory
 """
 
