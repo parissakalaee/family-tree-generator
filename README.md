@@ -43,6 +43,22 @@ family-tree emma --lang fa     # Emma tree in Farsi only
 family-tree lars --lang nl     # Lars tree in Dutch only
 ```
 
+## Printing
+
+The standard PDF is sized to fit one large page. To print it on regular A4 sheets that you glue together, add `--print`:
+
+```bash
+family-tree emma --lang en --print
+```
+
+This produces an extra `_a4` PDF alongside the normal one, tiled across multiple A4 sheets in landscape orientation. If the tree is very wide, use `--print-cols` to control how many sheets wide the tiling should be:
+
+```bash
+family-tree emma --lang en --print --print-cols 2
+```
+
+Print all the sheets, lay them out on a table, and tape them together to get the full tree poster.
+
 ## Defining your own family
 
 1. Copy `src/family_tree/data/trees/emma.yaml` and fill it in with your own names and structure.

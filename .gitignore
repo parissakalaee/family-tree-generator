@@ -11,9 +11,6 @@ build/
 venv/
 *.egg
 
-# Generated output
-output/
-
 # macOS
 .DS_Store
 
