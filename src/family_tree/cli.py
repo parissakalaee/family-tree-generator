@@ -49,11 +49,13 @@ def main(argv=None):
     for name in trees:
         module = ALL[name]
         for lang in langs:
-            outpath = args.out / f'{module.SLUG}_{lang}.pdf'
+            lang_dir = args.out / name / lang
+            lang_dir.mkdir(parents=True, exist_ok=True)
+            outpath = lang_dir / f'{module.SLUG}_{lang}.pdf'
             build_pdf(module.make_pages(lang), str(outpath), lang)
             print(f'wrote {outpath}')
             if args.print_a4:
-                a4path = args.out / f'{module.SLUG}_{lang}_a4.pdf'
+                a4path = lang_dir / f'{module.SLUG}_{lang}_a4.pdf'
                 build_pdf(module.make_pages(lang), str(a4path), lang,
                           paper=A4_LANDSCAPE, cols=args.print_cols)
                 print(f'wrote {a4path}')
