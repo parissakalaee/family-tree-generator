@@ -1,13 +1,13 @@
 from typing import Any
 
 # Geometry constants (points)
-ROW_H: int = 40
-COL_W: int = 180
-BOX_W: int = 150
-BOX_UNIFORM: int = 36
-MARGIN_X: int = 40
-MARGIN_TOP: int = 100
-MARGIN_BOT: int = 45
+ROW_H: float = 40
+COL_W: float = 180
+BOX_W: float = 150
+BOX_UNIFORM: float = 36
+MARGIN_X: float = 40
+MARGIN_TOP: float = 100
+MARGIN_BOT: float = 45
 
 
 def person(name: str, g: str, sp: str | None = None, sp2: str | None = None,
