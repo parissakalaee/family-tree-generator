@@ -18,7 +18,7 @@ from family_tree.trees import ALL
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog='family-tree',
-        description='Generate bilingual (English/Persian) family-tree PDFs.',
+        description='Generate multilingual family-tree PDFs.',
     )
     parser.add_argument(
         'trees', nargs='*', choices=sorted(ALL),

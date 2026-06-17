@@ -1,3 +1,5 @@
-"""Bilingual (English/Persian) family-tree PDF generator."""
+"""multilingual family-tree PDF generator."""
 
-__version__ = '0.1.0'
+from importlib.metadata import version
+
+__version__ = version("family-tree-generator")

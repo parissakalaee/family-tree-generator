@@ -12,9 +12,8 @@ of ``emma.yaml`` for the schema) — it is picked up automatically.
 import yaml
 from importlib.resources import files
 
-from family_tree.render import (
-    t_ui, t_name, star_suffix, legend_basic, legend_with_cousin,
-)
+from family_tree.translations import t_ui, t_name, star_suffix
+from family_tree.drawing import legend_basic, legend_with_cousin
 
 # Auto-discover all YAML files in the trees data directory.
 _NAMES = tuple(
@@ -23,7 +22,7 @@ _NAMES = tuple(
     if p.name.endswith('.yaml')
 )
 
-# Page `legend:` value -> builder in render.py.
+# Page `legend:` value -> builder in drawing.py.
 _LEGENDS = {'basic': legend_basic, 'cousin': legend_with_cousin}
 
 
