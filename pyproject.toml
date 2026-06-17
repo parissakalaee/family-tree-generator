@@ -25,6 +25,12 @@ where = ["src"]
 [tool.setuptools.package-data]
 family_tree = ["data/*.json", "data/trees/*.yaml", "assets/fonts/*"]
 
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.ruff]
 target-version = "py312"
 line-length = 100
